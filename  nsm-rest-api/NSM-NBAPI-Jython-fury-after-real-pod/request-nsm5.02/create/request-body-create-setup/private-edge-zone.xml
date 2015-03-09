@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Private Edge Zone</name>
+	<description>This is the description of My Setup Private Edge Zone</description>
+	<parameters>
+	</parameters>
+</serviceOffering>

@@ -1,0 +1,53 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"scope system",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"enter import-config tftp://${tftp-server-host}/ enabled replace",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"set remote-file ucs-backup-all.xml",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"commit-buffer",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"end",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	],
+	
+	"copy": [
+	    {
+	    	"cmd": 		"scope system",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"enter backup tftp://${tftp-server-host}/ all-configuration enabled",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"set remote-file ucs-backup-all.xml",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"commit-buffer",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"end",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	]
+}

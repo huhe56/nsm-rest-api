@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tenant xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>${name}</name>
+	<description>${description}</description>
+	<properties>
+		<property>
+			<name>routable.private.address.pool</name>
+			<type>subnets</type>
+			<subnets>
+				<subnet>
+					<ipv4>${routable.private.address.pool.subnet.1.ipv4}</ipv4>
+					<mask>${routable.private.address.pool.subnet.1.mask}</mask>
+				</subnet>
+			</subnets>
+		</property>
+	</properties>
+</tenant>

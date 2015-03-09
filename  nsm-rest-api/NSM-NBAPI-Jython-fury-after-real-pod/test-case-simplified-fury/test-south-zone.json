@@ -1,0 +1,20 @@
+{
+    "SouthZone":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-south-zone.xml",
+	    	"name": "My Default South Zone",
+	    	"description": "This is the description of my default south zone"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

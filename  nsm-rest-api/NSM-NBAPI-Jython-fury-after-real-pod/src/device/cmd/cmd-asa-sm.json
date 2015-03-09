@@ -1,0 +1,55 @@
+{
+	"copy": [
+	    {
+	    	"cmd": 		"enable"
+	    },
+	    {
+	    	"cmd": 		"cisco123"
+	    },
+	    {
+	    	"cmd": 		"changeto system"
+	    },
+	    {
+	    	"cmd": 		"copy running-config tftp",
+	    	"expect": 	"config\\]\\?"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect": 	"remote host \\[\\]\\?"
+	    },
+	    {
+	    	"cmd": 		"${tftp-server-host}",
+	    	"expect": 	"config\\]\\?"
+	    },
+	    {
+	    	"cmd": 		"${host-name}-system-running-config",
+	    	"expect": 	"bytes copied in"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	],
+	
+	"reset": [
+	    {
+	    	"cmd": 		"enable",
+	    	"expect":	"Password"	
+	    },
+	    {
+	    	"cmd": 		"cisco123",
+	    	"expect": 	"admin"
+	    },
+	    {
+	    	"cmd": 		"changeto system",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"terminal pager 0",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"show running-config",
+	    	"expect": 	"end"
+	    }
+	]
+}

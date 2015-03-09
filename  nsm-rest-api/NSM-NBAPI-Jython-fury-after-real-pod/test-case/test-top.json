@@ -1,0 +1,17 @@
+{
+    "Top":      
+     [
+		{
+		    "id": "001",
+		    "name": "My Default Top",
+		    "action": "create",
+	    	"category": "positive"
+		}, 
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+    ]
+}

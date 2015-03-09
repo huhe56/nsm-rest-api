@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema  targetNamespace="http://www.cisco.com/NetworkServicesManager/1.1" 
+xmlns="http://www.cisco.com/NetworkServicesManager/1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" elementFormDefault="qualified"
+xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:nsmr="http://www.cisco.com/NetworkServicesManager/rel" 
+version="1.1.0" jaxb:version="2.0" 
+jaxb:extensionBindingPrefixes="xjc" xmlns:atom="http://www.w3.org/2005/Atom">
+	<xs:annotation>
+		<xs:appinfo>
+			<jaxb:globalBindings>
+				<xjc:simple/>
+                    <jaxb:javaType name="java.util.Calendar" xmlType="xs:dateTime" parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime" printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+			</jaxb:globalBindings>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:import namespace="http://www.w3.org/2005/Atom" schemaLocation="/Users/huhe/Install/workspace/NSM-NBAPI-Jython/schema/ATOM-1.0.xsd"/>
+	<xs:element name="apiIndex" type="ApiIndexValue"/>
+	<xs:complexType name="ApiIndexValue">
+		<xs:sequence>
+			<xs:element name="productInformation" type="ProductInformationValue" minOccurs="0"/>
+			<xs:element name="apiVersions" type="ApiVersionListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="productInformation" type="ProductInformationValue"/>
+	<xs:complexType name="ProductInformationValue">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="vendor" type="xs:string" minOccurs="0"/>
+			<xs:element name="version" type="xs:string" minOccurs="0"/>
+			<xs:element name="build" type="xs:string" minOccurs="0"/>
+			<xs:element name="release" type="xs:string" minOccurs="0"/>
+			<xs:element name="buildDate" type="xs:string" minOccurs="0"/>
+			<xs:element name="url" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="apiVersions" type="ApiVersionListValue"/>
+	<xs:complexType name="ApiVersionListValue">
+		<xs:sequence>
+			<xs:element name="apiVersion" type="ApiVersionValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="apiVersion" type="ApiVersionValue"/>
+	<xs:complexType name="ApiVersionValue">
+		<xs:sequence>
+			<xs:element name="version" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="ApiVersionStatusValue" minOccurs="0"/>
+			<xs:element name="schemaVersions" type="SchemaVersionListValue" minOccurs="0"/>
+			<xs:element name="links" type="LinkListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="schemaVersions" type="SchemaVersionListValue"/>
+	<xs:complexType name="SchemaVersionListValue">
+		<xs:sequence>
+			<xs:element name="schemaVersion" type="SchemaVersionValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="schemaVersion" type="SchemaVersionValue"/>
+	<xs:complexType name="SchemaVersionValue">
+		<xs:sequence>
+			<xs:element name="version" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="ApiVersionStatusValue" minOccurs="0"/>
+			<xs:element name="mediaType" type="xs:string" minOccurs="0"/>
+			<xs:element name="representations" type="RepresentationListValue" minOccurs="0"/>
+			<xs:element name="links" type="LinkListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="representations" type="RepresentationListValue"/>
+	<xs:complexType name="RepresentationListValue">
+		<xs:sequence>
+			<xs:element name="representation" type="RepresentationValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="representation" type="RepresentationValue"/>
+	<xs:complexType name="RepresentationValue">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0" />
+			<xs:element name="mediaType" type="xs:string" minOccurs="0"/>
+			<xs:element name="namespace" type="xs:string" minOccurs="0"/>
+			<xs:element name="schemaLocation" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="entity" type="EntityValue"/>
+	<xs:complexType name="EntityValue" abstract="true">
+		<xs:annotation>
+			<xs:documentation>
+			The element entity is a high level representation of any entity. Every business model object is an entity.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="xs:anyURI" minOccurs="0"/>
+			<xs:element name="name" type="xs:token" minOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="version" type="xs:int" minOccurs="0"/>
+			<xs:element name="links" type="LinkListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="networkEntity" type="NetworkEntityValue"/>
+	<xs:complexType name="NetworkEntityValue">
+		<xs:annotation>
+			<xs:documentation>
+			The element networkEntity represents  any container such as Tenant Network Container, Network Container, etc.
+			
+			The links element provides all the links related the current resource such as catalog. 
+        </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityValue">
+				<xs:sequence>
+				    <xs:choice>
+						<xs:element name="parameters" type="ParameterListValue" minOccurs="0"/>
+						<xs:element name="properties" type="PropertyListValue" minOccurs="0"/>
+				    </xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="parameters" type="ParameterListValue"/>
+	<xs:complexType name="ParameterListValue">
+		<xs:sequence>
+			<xs:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="properties" type="PropertyListValue"/>
+	<xs:complexType name="PropertyListValue">
+		<xs:sequence>
+			<xs:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="parameter" type="ConfigurationValue"/>
+	<xs:element name="property" type="ConfigurationValue"/>
+	<xs:complexType name="ConfigurationValue">
+		<xs:annotation>
+			<xs:documentation>
+		The element parameter allows configuring  parameters such as vlan range, vlan pool, etc.
+		
+		The element setting provides already configured settings information such as vlan range, vlan pool, etc.
+		
+		The element name is allow passing configuration parameter/setting name and this information comes from the meta model, e.g. tmpl.vplan.pool
+		
+		The element type indicates the correct data type for the given parameter. It is not expected of the NBS to provide any value for 
+		this element. During the retrieval of the ServiceOffering, it provides the configuration name and the supported data type for it.
+		
+        </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="1"/>
+			<xs:element name="type" type="xs:string" minOccurs="0"/>
+			<xs:choice minOccurs="0">
+				<xs:element ref="value"/>
+				<xs:element name="integer" type="xs:int"/>
+				<xs:element name="string" type="xs:string"/>
+				<xs:element name="boolean" type="xs:boolean"/>
+				<xs:element name="date" type="xs:dateTime"/>
+				<xs:element name="uid" type="xs:anyURI"/>
+				<xs:element name="ipv4" type="IPv4Value"/>
+				<xs:element name="macAddress" type="MACAddressValue"/>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="isReadOnly" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:element name="value" type="Value"/>
+	<xs:complexType name="Value" abstract="true">
+		<xs:annotation>
+			<xs:documentation>
+		The element value is an abstract type and can be replaced by any complex type defined as a substitutionGroup for 
+		value, e.g. SubnetValue, RangeValue, etc. 
+        </xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:element name="multipleChoices" type="MutlipleChoiceListValue" substitutionGroup="value"/>
+	<xs:complexType name="MutlipleChoiceListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="multipleChoice" type="StringListValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="multipleChoice" type="StringListValue"/>
+	<xs:element name="strings" type="StringListValue" substitutionGroup="value"/>
+	<xs:complexType name="StringListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="string" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="uids" type="UidListValue" substitutionGroup="value"/>
+	<xs:complexType name="UidListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="uid" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="segmentLocations" type="SegmentLocationListValue" substitutionGroup="value"/>
+	<xs:complexType name="SegmentLocationListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="segmentLocation" type="SegmentLocationValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="segmentLocation" type="SegmentLocationValue" substitutionGroup="value"/>
+	<xs:complexType name="SegmentLocationValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="vSphere" type="VSphereValue"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="vSphere" type="VSphereValue" />
+	<xs:complexType name="VSphereValue">
+			<xs:sequence>
+				<xs:element name="vc" type="SwitchInfoValue"/>
+				<xs:element name="dvs" type="SwitchInfoValue"/>
+				<xs:element name="portGroup" type="PortGroupValue"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:element name="switchInfo" type="SwitchInfoValue" />
+	<xs:complexType name="SwitchInfoValue">
+			<xs:sequence>
+				<xs:element name="ipv4" type="IPv4Value" minOccurs="0"/>
+				<xs:element name="uuid" type="UUIDValue" minOccurs="0"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:element name="portGroup" type="PortGroupValue" />
+	<xs:complexType name="PortGroupValue">
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:element name="vrf" type="VrfValue" substitutionGroup="value"/>
+	<xs:complexType name="VrfValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string"/>
+					<xs:element name="devices" type="DeviceListValue"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="device" type="DeviceValue" abstract="true"/>
+	<xs:complexType name="DeviceValue">
+		<xs:sequence>
+			<xs:element name="ipv4" type="IPv4Value"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="vrfDevice" type="VRFDeviceValue"/>
+	<xs:complexType name="VRFDeviceValue">
+		<xs:complexContent>
+			<xs:extension base="DeviceValue">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="routingDevice" type="RoutingDeviceValue"/>
+	<xs:complexType name="RoutingDeviceValue">
+		<xs:complexContent>
+			<xs:extension base="DeviceValue">
+				<xs:sequence>
+					<xs:element name="process" type="xs:int"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="devices" type="DeviceListValue" substitutionGroup="value"/>
+	<xs:complexType name="DeviceListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:choice>
+					<xs:element name="vrfDevice" type="VRFDeviceValue" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="routingDevice" type="RoutingDeviceValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="routingStrategy" type="RoutingStrategyValue" substitutionGroup="value"/>
+	<xs:complexType name="RoutingStrategyValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:choice>
+					<xs:element name="ospf" type="OspfValue"/>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ospf" type="OspfValue"/>
+	<xs:complexType name="OspfValue">
+		<xs:sequence>
+			<xs:element name="area" type="xs:string"/>
+			<xs:element name="devices" type="DeviceListValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="subnet" type="SubnetValue" substitutionGroup="value"/>
+	<xs:complexType name="SubnetValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="ipv4" type="IPv4Value" minOccurs="1"/>
+					<xs:element name="mask" type="xs:int" minOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="subnets" type="SubnetListValue" substitutionGroup="value"/>
+	<xs:complexType name="SubnetListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="subnet" type="SubnetValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="trafficFilter" type="TrafficFilterValue" substitutionGroup="value"/>
+	<xs:complexType name="TrafficFilterValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="uid" type="xs:string"/>
+					<xs:element name="ipv4AddressRanges" type="IPv4AddressRangeListValue" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="trafficFilters" type="TrafficFilterListValue" substitutionGroup="value"/>
+	<xs:complexType name="TrafficFilterListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="trafficFilter" type="TrafficFilterValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="routeTarget" type="RouteTargetValue" substitutionGroup="value"/>
+	<xs:complexType name="RouteTargetValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="ipv4" type="IPv4Value" />
+						<xs:element name="ASNumber" type="xs:unsignedShort" />
+					</xs:sequence>
+					<xs:sequence>
+						<xs:element name="ASNumber1" type="xs:unsignedShort" />
+						<xs:element name="ASNumber2" type="xs:int" />
+					</xs:sequence>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="routeTargets" type="RouteTargetListValue" substitutionGroup="value"/>
+	<xs:complexType name="RouteTargetListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="routeTarget" type="RouteTargetValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="protocolService" type="ProtocolServiceValue" substitutionGroup="value"/>
+	<xs:complexType name="ProtocolServiceValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="protocol" type="ProtocolEnumeration" />
+					<xs:element name="portRange" type="RangeValue" minOccurs="0"/>
+					<xs:element name="redirectPort" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="protocolServices" type="ProtocolServiceListValue" substitutionGroup="value"/>
+	<xs:complexType name="ProtocolServiceListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="protocolService" type="ProtocolServiceValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="IPv4Value">
+		<xs:annotation>
+			<xs:documentation>
+           An IPv4 address.
+       </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="ipv4Addresses" type="IPv4ListValue" substitutionGroup="value"/>
+	<xs:complexType name="IPv4ListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="ipv4" type="IPv4Value" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ipv4Type" type="IPv4TypeValue" substitutionGroup="value"/>
+	<xs:complexType name="IPv4TypeValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" minOccurs="1"/>
+					<xs:element name="ipv4" type="IPv4Value" minOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ipv4Pairs" type="IPv4PairListValue" substitutionGroup="value"/>
+	<xs:complexType name="IPv4PairListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="ipv4Pair" type="IPv4PairValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ipv4Pair" type="IPv4PairValue" substitutionGroup="value"/>
+	<xs:complexType name="IPv4PairValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="ipv4Type" type="IPv4TypeValue" maxOccurs="2"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="MACAddressValue">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([0-9a-fA-F]{2}):?){5}[0-9a-fA-F]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="UUIDValue">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="range" type="RangeValue" substitutionGroup="value"/>
+	<xs:complexType name="RangeValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="start" type="xs:int" minOccurs="1"/>
+					<xs:element name="end" type="xs:int" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ranges" type="RangeListValue" substitutionGroup="value"/>
+	<xs:complexType name="RangeListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="range" type="RangeValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="qosPolicy" type="QosPolicyValue" substitutionGroup="value"/>
+	<xs:complexType name="QosPolicyValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="inPolicy" type="xs:string" minOccurs="1"/>
+					<xs:element name="outPolicy" type="xs:string" minOccurs="1"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="qosPolicies" type="QosPolicyListValue" substitutionGroup="value"/>
+	<xs:complexType name="QosPolicyListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="qosPolicy" type="QosPolicyValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="choice" type="ChoiceValue" substitutionGroup="value"/>
+	<xs:complexType name="ChoiceValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:attribute name="displayValue" type="xs:string"/>
+				<xs:attribute name="internalValue" type="xs:string"/>
+				<xs:attribute name="default" type="xs:boolean"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="choices" type="ChoiceListValue" substitutionGroup="value"/>
+	<xs:complexType name="ChoiceListValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="choice" type="ChoiceValue" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="map" type="MapValue" substitutionGroup="value"/>
+	<xs:complexType name="MapValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:attribute name="name" type="xs:string"/>
+				<xs:attribute name="value" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="maps" type="MapListValue" substitutionGroup="value"/>
+      <xs:complexType name="MapListValue">
+            <xs:complexContent>
+                  <xs:extension base="Value">
+                        <xs:sequence>
+                              <xs:element name="map" type="MapValue" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                  </xs:extension>
+            </xs:complexContent>
+      </xs:complexType>
+	<xs:element name="scheduledDate" type="ScheduledDateValue" substitutionGroup="value"/>
+	<xs:complexType name="ScheduledDateValue">
+		<xs:complexContent>
+			<xs:extension base="Value">
+				<xs:sequence>
+					<xs:element name="schedule" type="ScheduleDateValue"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="ScheduleDateValue">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IMMEDIATE"/>
+			<xs:enumeration value="NEVER"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="links" type="LinkListValue"/>
+	<xs:complexType name="LinkListValue">
+		<xs:sequence>
+			<xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="link" type="atom:linkType"/>
+	<xs:element name="pods" type="PodListValue"/>
+	<xs:complexType name="PodListValue">
+		<xs:sequence>
+			<xs:element name="pod" type="PodValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="pod" type="PodValue"/>
+	<xs:complexType name="PodValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="serviceOfferings" type="ServiceOfferingListValue"/>
+	<xs:complexType name="ServiceOfferingListValue">
+		<xs:sequence>
+			<xs:element name="serviceOffering" type="ServiceOfferingValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="serviceOffering" type="ServiceOfferingValue"/>
+	<xs:complexType name="ServiceOfferingValue">
+		<xs:annotation>
+			<xs:documentation>
+	       The attribute type indicates the type of ServiceOffering, e.g. Network Container vs. Enternal Network Connection
+	    </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue">
+				<xs:attribute name="type" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="zones" type="ZoneListValue"/>
+	<xs:complexType name="ZoneListValue">
+		<xs:sequence>
+			<xs:element name="zone" type="ZoneValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="zone" type="ZoneValue"/>
+	<xs:complexType name="ZoneValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="networkSegments" type="NetworkSegmentListValue"/>
+	<xs:complexType name="NetworkSegmentListValue">
+		<xs:sequence>
+			<xs:element name="networkSegment" type="NetworkSegmentValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="networkSegment" type="NetworkSegmentValue"/>
+	<xs:complexType name="NetworkSegmentValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="externalNetworkns" type="ExternalNetworkListValue"/>
+	<xs:complexType name="ExternalNetworkListValue">
+		<xs:sequence>
+			<xs:element name="externalNetworkC" type="ExternalNetworkValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="externalNetwork" type="ExternalNetworkValue"/>
+	<xs:complexType name="ExternalNetworkValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="externalNetworkConnections" type="ExternalNetworkConnectionListValue"/>
+	<xs:complexType name="ExternalNetworkConnectionListValue">
+		<xs:sequence>
+			<xs:element name="externalNetworkConnection" type="ExternalNetworkConnectionValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="externalNetworkConnection" type="ExternalNetworkConnectionValue"/>
+	<xs:complexType name="ExternalNetworkConnectionValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="tenantNetworkContainers" type="TenantNetworkContainerListValue"/>
+	<xs:complexType name="TenantNetworkContainerListValue">
+		<xs:sequence>
+			<xs:element name="tenantNetworkContainer" type="TenantNetworkContainerValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="tenantNetworkContainer" type="TenantNetworkContainerValue"/>
+	<xs:complexType name="TenantNetworkContainerValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="servicePoliciess" type="ServicePolicyListValue"/>
+	<xs:complexType name="ServicePolicyListValue">
+		<xs:sequence>
+			<xs:element name="service" type="ServicePolicyValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="servicePolicy" type="ServicePolicyValue"/>
+	<xs:complexType name="ServicePolicyValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="providers" type="ProviderListValue"/>
+	<xs:complexType name="ProviderListValue">
+		<xs:sequence>
+			<xs:element name="provider" type="ProviderValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="provider" type="ProviderValue"/>
+	<xs:complexType name="ProviderValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="tenants" type="TenantListValue"/>
+	<xs:complexType name="TenantListValue">
+		<xs:sequence>
+			<xs:element name="tenant" type="TenantValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="tenant" type="TenantValue"/>
+	<xs:complexType name="TenantValue">
+		<xs:complexContent>
+			<xs:extension base="NetworkEntityValue"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="tasks" type="TaskListValue"/>
+	<xs:complexType name="TaskListValue">
+		<xs:sequence>
+			<xs:element name="task" type="TaskValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="task" type="TaskValue"/>
+	<xs:complexType name="TaskValue">
+		<xs:annotation>
+			<xs:documentation>
+                Handle to a long-running operation.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityValue">
+				<xs:sequence>
+					<xs:element name="status" type="StatusValue" minOccurs="1"/>
+					<xs:element name="startTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="lastModificationTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="endTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="expiryTime" type="xs:dateTime" minOccurs="0"/>
+					<xs:element name="percentComplete" type="xs:int" minOccurs="0"/>
+					<xs:choice>
+						<xs:element name="result" type="xs:anyType" minOccurs="0"/>
+						<xs:element name="faults" type="FaultListValue" minOccurs="0"/>
+					</xs:choice>
+					<xs:element name="message" type="xs:string" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="status" type="StatusValue"/>
+	<xs:complexType name="StatusValue">
+		<xs:sequence>
+			<xs:element name="taskStatus" type="TaskStatusValue"/>
+			<xs:element name="logMessage" type="xs:string" minOccurs="0"/>
+			<xs:element name="responseCode" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="TaskStatusValue">
+		<xs:annotation>
+			<xs:documentation>
+                The possible
+                states for a task.
+
+                Pending indicates that the system is
+                currently processing the task.
+
+                Success indicates the task
+                completed as intended with the desired result.
+
+                Failure indicates a problem occurred while processing the
+                task.
+
+            </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pending"/>
+			<xs:enumeration value="success"/>
+			<xs:enumeration value="failure"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ApiVersionStatusValue">
+		<xs:annotation>
+			<xs:documentation>
+                The possible
+                states for overall API based on its version.
+
+                Current indicates it the most current version.
+
+                Legacy indicates that the API version is legacy but still supported
+                by the system given the correct namespace and URLs are being used.
+
+                Unsupported indicates the the API version is no longer supported.
+                
+
+            </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="current"/>
+			<xs:enumeration value="legacy"/>
+			<xs:enumeration value="unsupported"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="fault" type="FaultValue"/>
+	<xs:complexType name="FaultValue">
+		<xs:annotation>
+			<xs:documentation>
+			The element entity is a representation of any error or exception encountered. 
+        </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="faultType" type="xs:string" minOccurs="0"/>
+			<xs:element name="message" type="xs:string" minOccurs="0"/>
+			<xs:element name="arguments" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="faultDetails" type="FaultListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="faults" type="FaultListValue"/>
+	<xs:complexType name="FaultListValue">
+		<xs:sequence>
+			<xs:element name="fault" type="FaultValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="arguments" type="ArgumentListValue"/>
+	<xs:complexType name="ArgumentListValue">
+		<xs:sequence>
+			<xs:element name="argument" type="ArgumentValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ArgumentValue">
+		<xs:annotation>
+			<xs:documentation>
+        	</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="argument" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="errorCode" type="ErrorCodeValue"/>
+	<xs:complexType name="ErrorCodeValue">
+		<xs:annotation>
+			<xs:documentation>
+        </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="errorType" type="xs:string" minOccurs="0"/>
+			<xs:element name="message" type="xs:string" minOccurs="0"/>
+			<xs:element name="status" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="errorCodes" type="ErrorCodeListValue"/>
+	<xs:complexType name="ErrorCodeListValue">
+		<xs:sequence>
+			<xs:element name="errorCode" type="ErrorCodeValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="topIndex" type="TopIndexValue"/>
+	<xs:complexType name="TopIndexValue">
+		<xs:sequence>
+			<xs:element name="name" type="xs:token" minOccurs="1"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="links" type="LinkListValue" minOccurs="0"/>
+			<xs:element name="apiVersions" type="ApiVersionListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipAddressPool" type="IPAddressPoolValue"/>
+	<xs:complexType name="IPAddressPoolValue">
+		<xs:annotation>
+			<xs:documentation>
+        	</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityValue">
+				<xs:sequence>
+					<xs:element name="subnets" type="SubnetListValue" minOccurs="0"/>
+					<xs:element name="summary" type="SummaryValue" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="summary" type="SummaryValue"/>
+	<xs:complexType name="SummaryValue">
+		<xs:sequence>
+			<xs:element name="total" type="xs:int" minOccurs="0"/>
+			<xs:element name="reserved" type="xs:int" minOccurs="0"/>
+			<xs:element name="available" type="xs:int" minOccurs="0"/>
+			<xs:element name="ipv4AddressRanges" type="IPv4AddressRangeListValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipAvailable" type="IPAvailableValue"/>
+	<xs:complexType name="IPAvailableValue">
+		<xs:sequence>
+			<xs:element name="ipv4AddressRange" type="IPv4AddressRangeValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipv4AddressRange" type="IPv4AddressRangeValue"/>
+	<xs:complexType name="IPv4AddressRangeValue">
+		<xs:sequence>
+			<xs:element name="ipv4Start" type="IPv4Value" minOccurs="1"/>
+			<xs:element name="ipv4End" type="IPv4Value" minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipv4AddressRanges" type="IPv4AddressRangeListValue"/>
+	<xs:complexType name="IPv4AddressRangeListValue">
+		<xs:sequence>
+			<xs:element name="ipv4AddressRange" type="IPv4AddressRangeValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipReservation" type="IPReservationValue"/>
+	<xs:complexType name="IPReservationValue">
+		<xs:annotation>
+			<xs:documentation>
+        	</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="EntityValue">
+				<xs:sequence>
+					<xs:element name="owner" type="xs:string" minOccurs="0"/>
+					<xs:element name="ipv4AddressRanges" type="IPv4AddressRangeListValue" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ipReservations" type="IPReservationListValue"/>
+	<xs:complexType name="IPReservationListValue">
+		<xs:sequence>
+			<xs:element name="ipReservation" type="IPReservationValue" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipAllocated" type="IPAllocatedValue"/>
+	<xs:complexType name="IPAllocatedValue">
+		<xs:sequence>
+			<xs:element name="ipAddressPool" type="IPAddressPoolValue" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipReservationRequest" type="IPReservationRequestValue"/>
+	<xs:complexType name="IPReservationRequestValue">
+		<xs:sequence>
+			<xs:element name="ipReservation" type="IPReservationValue" minOccurs="0"/>
+			<xs:element name="allocateRequest" type="AllocateRequestValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="allocateRequest" type="AllocateRequestValue"/>
+	<xs:complexType name="AllocateRequestValue">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element name="count" type="xs:int" minOccurs="0"/>
+				<xs:element name="ipv4AddressRanges" type="IPv4AddressRangeListValue" minOccurs="0"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ipReservationResponse" type="IPReservationResponseValue"/>
+	<xs:complexType name="IPReservationResponseValue">
+		<xs:sequence>
+			<xs:element name="ipReservation" type="IPReservationValue" minOccurs="0"/>
+			<xs:element name="poolSummary" type="SummaryValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ProtocolEnumeration">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="icmp"/>
+			<xs:enumeration value="tcp"/>
+			<xs:enumeration value="udp"/>
+			<xs:enumeration value="gre"/>
+			<xs:enumeration value="esp"/>
+			<xs:enumeration value="ospf"/>
+			<xs:enumeration value="any"/>
+			<xs:enumeration value="ah"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

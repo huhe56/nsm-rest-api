@@ -1,0 +1,43 @@
+{
+    "TenantNetworkContainer":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-tenant-network-container.xml",
+	    	"name": "My Default Tenant Network Container",
+	    	"description": "This is the description of my default Create tenant network container",
+	    	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "tnc.pod.uid",
+		    	    "class": "Pod",
+		    	    "name": "My Default Pod"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties-simplified.csv" 
+    	}
+		
+    ]
+}

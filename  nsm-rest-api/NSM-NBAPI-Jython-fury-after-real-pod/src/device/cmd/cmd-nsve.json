@@ -1,0 +1,79 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"cd /usr/local/overdrive/engine/bin",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"sh reset-config.sh",
+	    	"expect":	"bin\\]"
+	    }
+	],
+	"save-log": [
+	    {
+	    	"cmd": 		"show tech-support file nsve-tech-support",
+	    	"sleep":	"120",
+	    	"expect":	"nsm-engine tech-support output finished at"
+	    },
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"cd /root",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"rm -fr log*",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"mkdir log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cd log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /usr/local/jboss/server/wpserver/log/server.log* .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /usr/local/jboss/server/wpserver/log/admin.log .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"ls -lt /localdisk/*",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /localdisk/nsve-tech-support.tar.gz .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cd ..",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"tar cvf log.nsve.tar log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"gzip log.nsve.tar",
+	    	"expect":	"]#"
+	    }
+	]
+}

@@ -1,0 +1,52 @@
+{
+    "FirewallService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-firewall-service.xml",
+	    	"name": "My Default Private Firewall Service Between Secured and Unsecured Zone",
+	    	"description": "This is the description of my default Create private firewall service between secured and unsecured zone",
+	    	
+	    	"fw.service.1.protocol": "udp",
+        	"fw.service.1.port.start": "999",
+        	"fw.service.1.port.end": "1999",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "Layer3PrivateAccessVlan",
+		    	    "name": "My Default Secured Private Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "Layer3PrivateAccessVlan",
+		    	    "name": "My Default Private Edge Zone Layer 3 VLAN"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties-simplified.csv" 
+    	}
+		
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "DynamicPatService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-dynamic-pat-service.xml",
+	    	"name": "My Default Internet Dynamic PAT Service",
+	    	"description": "This is the description of my default internet dynamic pat service",
+	    	
+        	"mapped.address.1.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"mapped.address.1.ipv4.end": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Secured Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "mapped.address.uid",
+		    	    "class": "InternetEdgeZone",
+		    	    "name": "My Default Internet Edge Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

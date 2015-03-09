@@ -1,0 +1,30 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"configure replace ${archive-name}",
+	    	"expect": 	"\\[no\\]:"
+	    },
+	    {
+	    	"cmd": 		"Y",
+	    	"expect": 	"Rollback Done"
+	    }
+	],
+	
+	"copy": [
+	    {
+	    	"cmd": 		"copy running-config tftp:",
+	    	"expect": 	"remote host \\[\\]\\?"
+	    },
+	    {
+	    	"cmd": 		"${tftp-server-host}",
+	    	"expect": 	"confg]?"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect": 	"bytes copied in"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	]
+}

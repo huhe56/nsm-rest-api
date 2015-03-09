@@ -1,0 +1,34 @@
+{
+    "SecuredInternetEdgeZone":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-secured-internet-edge-zone.xml",
+	    	"name": "My Default Secured Internet Edge Zone",
+	    	"description": "This is the description of my default Create secured internet edge zone"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties-simplified.csv" 
+    	}
+		
+    ]
+}

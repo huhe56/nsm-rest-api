@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Tenant</name>
+	<description>This is the description of My Default Tenant</description>
+	<parameters>
+		<parameter>
+			<name>routable.private.address.pool</name>
+			<type>subnets</type>
+			<subnets>
+				<subnet>
+					<ipv4>192.168.240.0</ipv4>
+					<mask>20</mask>
+				</subnet>
+			</subnets>
+		</parameter>
+	</parameters>
+</serviceOffering>

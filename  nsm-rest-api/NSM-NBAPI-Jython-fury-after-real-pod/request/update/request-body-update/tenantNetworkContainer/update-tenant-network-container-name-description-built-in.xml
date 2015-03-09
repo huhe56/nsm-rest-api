@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tenantNetworkContainer xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Update Tenant Network Container Name Description Built In</name>
+	<description>This is the description of My Update Tenant Network Container Name Description Built In</description>
+</tenantNetworkContainer>

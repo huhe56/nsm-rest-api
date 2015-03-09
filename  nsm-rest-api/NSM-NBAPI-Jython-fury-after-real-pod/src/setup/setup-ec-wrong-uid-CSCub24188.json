@@ -1,0 +1,26 @@
+{
+    "Top": {
+	    "Provider": {
+	        "01-Pod": null,
+	        "02-Tenant": {
+	            "01-ExternalNetwork": null,
+	            "02-TenantNetworkContainer": {
+	                "uid": {
+	                    "tnc.pod.uid": "My Setup Pod"
+	                },
+	                "01-InternetEdgeZone": {
+	                    "Layer3ExternalAccessVlan": {
+	                        "request.body.file": "internet-edge-zone-layer3-vlan.xml"
+	                    }
+	                },
+	                "02-ExternalConnection": {
+	                    "uid": {
+	                    	"external.networks.1.uid": "My Setup External Network",
+	                		"assigned.zone.uid": "My Setup Internet Edge Zone Layer 3 VLAN"
+	                	}
+					}
+	            }
+	        }
+	    }
+    }
+}

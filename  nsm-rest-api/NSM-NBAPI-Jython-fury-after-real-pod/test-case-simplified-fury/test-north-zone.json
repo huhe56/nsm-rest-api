@@ -1,0 +1,22 @@
+{
+    "NorthZone":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-north-zone.xml",
+	    	"name": "My Default North Zone",
+	    	"description": "This is the description of my default north zone",
+	    	
+	    	"unmanaged.vrf.name": "telstra-unmanaged-vrf"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

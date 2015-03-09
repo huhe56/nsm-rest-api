@@ -1,0 +1,68 @@
+{
+    "SecuredPrivateEdgeZone":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-secured-private-edge-zone.xml",
+	    	"name": "My Default Secured Private Edge Zone",
+	    	"description": "This is the description of my default secured private edge zone"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties.csv" 
+    	},
+		
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+    	{
+    	    "id": "501",
+    	    "action": "delete",
+			"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-secured-private-edge-zone.xml",
+	    	"name": "My Default Secured Private Edge Zone",
+	    	"description": "This is the description of my default secured private edge zone"
+    	},
+    	
+    	{
+		    "id": "111",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "211",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

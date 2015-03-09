@@ -1,0 +1,27 @@
+{
+    "PrivateEdgeZone":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-private-edge-zone.xml",
+	    	"name": "My Default Private Edge Zone",
+	    	"description": "This is the description of my default private edge zone"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}
