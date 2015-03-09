@@ -1,0 +1,17 @@
+{
+    "NsmV1":      
+     [
+		{
+		    "id": "001",
+		    "name": "My Default NSM V1",
+		    "action": "create",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "ExternalConnection":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-external-connection.xml",
+	    	"name": "My Default Internet External Connection",
+	    	"description": "This is the description of my default external connection",
+	    	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "external.networks.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "assigned.zone.uid",
+		    	    "class": "NorthZone",
+		    	    "name": "My Default North Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

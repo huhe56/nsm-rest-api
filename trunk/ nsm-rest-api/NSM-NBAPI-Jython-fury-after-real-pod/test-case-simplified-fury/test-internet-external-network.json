@@ -1,0 +1,23 @@
+{
+    "ExternalNetwork":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-external-network.xml",
+	    	"name": "My Default Internet External Network",
+	    	"description": "This is the description of my default internet external network",
+	    	
+	    	"external.subnet.1.ipv4": "0.0.0.0",
+        	"external.subnet.1.mask": "0"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

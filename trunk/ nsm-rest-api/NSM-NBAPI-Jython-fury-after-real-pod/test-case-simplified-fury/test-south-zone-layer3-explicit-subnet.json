@@ -1,0 +1,23 @@
+{
+    "Layer3ExplicitSubnet":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-layer3-explicit-subnet.xml",
+	    	"name": "My Default South Zone Layer 3 Explicit Subnet",
+	    	"description": "This is the description of my default south zone layer 3 explicit subnet",
+	    	
+	    	"l3.explicit.subnet.ipv4": "84.0.0.0",
+	    	"l3.explicit.subnet.mask": "23"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

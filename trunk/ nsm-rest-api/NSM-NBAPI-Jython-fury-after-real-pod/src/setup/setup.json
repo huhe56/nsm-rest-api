@@ -1,0 +1,79 @@
+{
+    "Top": {
+	    "Provider": {
+	        "01-Pod": {
+	        },
+	        "11-Tenant": {
+	            "01-ExternalNetwork": null,
+	            "02-ExternalNetwork": {
+	                "request.body.file": "private-external-network.xml"
+	            },
+	            "11-TenantNetworkContainer": {
+	                "uid": {
+	                    "tnc.pod.uid": "My Setup Pod"
+	                },k
+	                "01-InternetEdgeZone": {
+	                    "Layer3ExternalAccessVlan": {
+	                        "request.body.file": "internet-edge-zone-layer3-vlan.xml"
+	                    }
+	                },
+	                "02-ExternalConnection": {
+	                    "uid": {
+	                    	"external.networks.1.uid": "My Setup External Network",
+	                		"assigned.zone.uid": "My Setup Internet Edge Zone"
+	                	}
+					},
+	                "03-SecuredInternetEdgeZone": {
+	                    "Layer3ExternalAccessVlan": {
+	                        "request.body.file": "secured-internet-edge-zone-layer3-vlan.xml"
+	                    }
+	                },
+	                "11-PrivateEdgeZone": {
+	                    "Layer3PrivateAccessVlan": {
+	                        "request.body.file": "private-edge-zone-layer3-vlan.xml"
+	                    }
+	                },
+	                "12-PrivateMplsConnection": {
+	                    "uid": {
+	                    	"external.networks.1.uid": "My Setup Private External Network",
+	                		"assigned.zone.uid": "My Setup Private Edge Zone"
+	                	}
+					},
+	                "13-SecuredPrivateEdgeZone": {
+	                    "Layer3PrivateAccessVlan": {
+	                        "request.body.file": "secured-private-edge-zone-layer3-vlan.xml"
+	                    }
+	                }
+	            },
+	            "21-FirewallService": {
+	                "request.body.file": "firewall-service-secured-and-unsecured.xml",
+	                "uid": {
+	                	"traffic.src.filter.uid": "My Setup Secured Internet Edge Zone Layer3 VLAN",
+	                	"traffic.dst.filter.uid": "My Setup Internet Edge Zone Layer3 VLAN"
+	                }
+	            },
+	            "22-FirewallService": {
+	                "request.body.file": "firewall-service-secured-and-external-network.xml",
+	                "uid": {
+	                	"traffic.src.filter.uid": "My Setup External Network",
+	                	"traffic.dst.filter.uid": "My Setup Secured Internet Edge Zone Layer3 VLAN"
+	                }
+	            },
+	            "23-FirewallService": {
+	                "request.body.file": "firewall-service-secured-and-unsecured-private.xml",
+	                "uid": {
+	                	"traffic.src.filter.uid": "My Setup Secured Private Edge Zone Layer3 VLAN",
+	                	"traffic.dst.filter.uid": "My Setup Private Edge Zone Layer3 VLAN"
+	                }
+	            },
+	            "24-FirewallService": {
+	                "request.body.file": "firewall-service-secured-and-external-network-private.xml",
+	                "uid": {
+	                	"traffic.src.filter.uid": "My Setup Private External Network",
+	                	"traffic.dst.filter.uid": "My Setup Secured Private Edge Zone Layer3 VLAN"
+	                }
+	            }	            
+	        }
+	    }
+    }
+}

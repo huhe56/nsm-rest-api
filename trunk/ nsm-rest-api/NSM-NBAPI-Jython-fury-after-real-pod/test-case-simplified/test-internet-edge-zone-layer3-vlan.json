@@ -1,0 +1,27 @@
+{
+    "Layer3ExternalAccessVlan":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-layer3-external-access-vlan.xml",
+	    	"name": "My Default Internet Edge Zone Layer 3 VLAN",
+	    	"description": "This is the description of my default internet edge zone layer 3 vlan",
+	    	"l3.vlan.netmask": "27"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "Provider":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-provider.xml",
+	    	"name": "My Default Provider",
+	    	"description": "This is the description of my default Create provider",
+	    	
+	    	"global.pool.subnet.1.ipv4": "179.111.0.0",
+			"global.pool.subnet.1.mask": "17"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties-simplified.csv" 
+    	}
+		
+    ]
+}

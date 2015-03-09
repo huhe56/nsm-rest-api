@@ -1,0 +1,74 @@
+{
+    "Tenant":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-tenant.xml",
+	    	"name": "My Default Tenant",
+	    	"description": "This is the description of my default tenant",
+	    	
+	    	"routable.private.address.pool.subnet.1.ipv4": "192.168.0.0",
+        	"routable.private.address.pool.subnet.1.mask": "16"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+    	
+    	{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties.csv" 
+    	},
+    	
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+    	{
+    	    "id": "501",
+    	    "action": "delete",
+			"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-tenant.xml",
+	    	"name": "My Default Tenant",
+	    	"description": "This is the description of my default tenant",
+	    	
+	    	"routable.private.address.pool.subnet.1.ipv4": "192.168.0.0",
+        	"routable.private.address.pool.subnet.1.mask": "16"
+    	},
+    	
+    	{
+		    "id": "111",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "211",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

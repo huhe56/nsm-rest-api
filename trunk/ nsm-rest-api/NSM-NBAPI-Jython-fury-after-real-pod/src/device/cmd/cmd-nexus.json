@@ -1,0 +1,30 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"rollback running-config checkpoint huan-baseline-config",
+	    	"expect": 	"Rollback completed successfully"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	],
+	
+	
+	"copy": [
+	    {
+	    	"cmd": 		"copy running-config tftp://${tftp-server-host}/tftpboot/",
+	    	"expect": 	"config\\]"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect": 	"considered"
+	    },
+	    {
+	    	"cmd": 		"management",
+	    	"expect": 	"Copy complete"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	]
+}

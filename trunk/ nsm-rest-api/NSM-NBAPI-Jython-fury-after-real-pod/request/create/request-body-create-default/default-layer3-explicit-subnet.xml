@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>${name}</name>
+	<description>${description}</description>
+	<parameters>
+		<parameter>
+			<name>l3.explicit.subnet</name>
+			<type>subnet</type>
+			<subnet>
+				<ipv4>${l3.explicit.subnet.ipv4}</ipv4>
+				<mask>${l3.explicit.subnet.mask}</mask>
+			</subnet>
+		</parameter>
+	</parameters>
+</serviceOffering>

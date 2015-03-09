@@ -1,0 +1,295 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"cd /tftpboot",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"rm ucs-backup-all.xml",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp clean/ucs-backup-all.xml .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"chmod 666 ucs-backup-all.xml",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"ls -lt",
+	    	"expect": 	"$"
+	    }
+	    
+	],
+	
+	"copy-to-tmp-clean": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp/clean",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"rm *",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/ucs-backup-all.xml .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/*g .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"ls -lt",
+	    	"expect": 	"$"
+	    }
+	],
+	
+	"copy-to-tmp-create": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp/create",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"rm *",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/ucs-backup-all.xml .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/*g .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"ls -lt",
+	    	"expect": 	"$"
+	    }
+	],
+	
+	"copy-to-tmp-delete": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp/delete",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"rm *",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/ucs-backup-all.xml .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"cp /tftpboot/*g .",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"ls -lt",
+	    	"expect": 	"$"
+	    }
+	],
+	
+	"diff-config-clean-delete": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asr-a-confg delete/od-c3-asr-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asr-b-confg delete/od-c3-asr-b-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n7k-a-running-config delete/od-c3-n7k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n7k-b-running-config delete/od-c3-n7k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n5k-a-running-config delete/od-c3-n5k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n5k-b-running-config delete/od-c3-n5k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n1kv-running-config delete/od-c3-n1kv-running-config",
+	    	"expect": 	"$"
+	    },
+	     {
+	    	"cmd": 		"diff clean/od-c3-ace-admin-running-config delete/od-c3-ace-admin-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asa-a-system-running-config delete/od-c3-asa-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asa-b-system-running-config delete/od-c3-asa-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-fwsm-a-system-running-config delete/od-c3-fwsm-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-fwsm-b-system-running-config delete/od-c3-fwsm-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-vss-confg delete/od-c3-vss-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c4-vss-a-confg delete/od-c4-vss-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c4-vss-b-confg delete/od-c4-vss-b-confg",
+	    	"expect": 	"$"
+	    }
+	],
+	
+	"diff-config-clean-create": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asr-a-confg create/od-c3-asr-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asr-b-confg create/od-c3-asr-b-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n7k-a-running-config create/od-c3-n7k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n7k-b-running-config create/od-c3-n7k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n5k-a-running-config create/od-c3-n5k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n5k-b-running-config create/od-c3-n5k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-n1kv-running-config create/od-c3-n1kv-running-config",
+	    	"expect": 	"$"
+	    },
+	     {
+	    	"cmd": 		"diff clean/od-c3-ace-admin-running-config create/od-c3-ace-admin-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asa-a-system-running-config create/od-c3-asa-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-asa-b-system-running-config create/od-c3-asa-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-fwsm-a-system-running-config create/od-c3-fwsm-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-fwsm-b-system-running-config create/od-c3-fwsm-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c3-vss-confg create/od-c3-vss-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c4-vss-a-confg create/od-c4-vss-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff clean/od-c4-vss-b-confg create/od-c4-vss-b-confg",
+	    	"expect": 	"$"
+	    }
+	],
+	
+	"diff-config-clean-clean": [
+	    {
+	    	"cmd": 		"cd /tftpboot/tmp",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-asr-a-confg clean/od-c3-asr-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-asr-b-confg clean/od-c3-asr-b-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-n7k-a-running-config clean/od-c3-n7k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-n7k-b-running-config clean/od-c3-n7k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-n5k-a-running-config clean/od-c3-n5k-a-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-n5k-b-running-config clean/od-c3-n5k-b-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-n1kv-running-config clean/od-c3-n1kv-running-config",
+	    	"expect": 	"$"
+	    },
+	     {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-ace-admin-running-config clean/od-c3-ace-admin-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-asa-a-system-running-config clean/od-c3-asa-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-asa-b-system-running-config clean/od-c3-asa-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-fwsm-a-system-running-config clean/od-c3-fwsm-a-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-fwsm-b-system-running-config clean/od-c3-fwsm-b-system-running-config",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c3-vss-confg clean/od-c3-vss-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c4-vss-a-confg clean/od-c4-vss-a-confg",
+	    	"expect": 	"$"
+	    },
+	    {
+	    	"cmd": 		"diff /tftpboot/clean/od-c4-vss-b-confg clean/od-c4-vss-b-confg",
+	    	"expect": 	"$"
+	    }
+	]
+}

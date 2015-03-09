@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipReservationRequest xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<ipReservation>
+		<name>${name}</name>
+		<description>${description}</description>
+		<owner>${owner}</owner>
+	</ipReservation>
+	<allocateRequest>
+		<ipv4AddressRanges>
+			<ipv4AddressRange>
+				<ipv4Start>${ipv4AddressRange.1.ipv4.start}</ipv4Start>
+				<ipv4End>${ipv4AddressRange.1.ipv4.end}</ipv4End>
+			</ipv4AddressRange>
+		</ipv4AddressRanges>
+	</allocateRequest>
+</ipReservationRequest>
+

@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pods xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<pod>
+		<uid>https://od-l1-nsve:8443/NetworkServicesManagerAPI/v1/pod/06afd81fbe3d45aba2116c3b1335bfbc</uid>
+		<name>L1 iPOD</name>
+		<description></description>
+		<version>1</version>
+		<links>
+			<link title="Infrastructure IP Address Pool" type="application/xml"
+				rel="nsmr:ipaddresspool"
+				href="https://od-l1-nsve:8443/NetworkServicesManagerAPI/v1/ipaddresspool/694a6fca7a35470ea98b1df57a8ba650" />
+			<link title="L1 iPOD" type="application/xml" rel="self"
+				href="https://od-l1-nsve:8443/NetworkServicesManagerAPI/v1/pod/06afd81fbe3d45aba2116c3b1335bfbc" />
+			<link title="Service Provider Telstra" type="application/xml"
+				rel="parent"
+				href="https://od-l1-nsve:8443/NetworkServicesManagerAPI/v1/provider/31c0177952924b05b602e4ba6289006f" />
+		</links>
+		<properties>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.196</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string>nsm</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string>nsm</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.snmp.ver</name>
+				<type>string</type>
+				<string>2c</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.to.l3.aggregation.switch.1</name>
+				<type>string</type>
+				<string>Po6</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.1.to.l3.aggregation.switch.2</name>
+				<type>string</type>
+				<string>Po6</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.197</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string>nsm</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string>nsm</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.snmp.ver</name>
+				<type>string</type>
+				<string>2c</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.to.l3.aggregation.switch.1</name>
+				<type>string</type>
+				<string>Po6</string>
+			</property>
+			<property isReadOnly="false">
+				<name>asa.firewall.2.to.l3.aggregation.switch.2</name>
+				<type>string</type>
+				<string>Po6</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.24</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string>DES</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.to.asa.firewall.1</name>
+				<type>string</type>
+				<string>Po8,Po9</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.to.asa.firewall.2</name>
+				<type>string</type>
+				<string>Po8,Po9</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.to.l3.services</name>
+				<type>string</type>
+				<string>Po7</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.1.to.ucsm</name>
+				<type>string</type>
+				<string>Po5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.25</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string>DES</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.to.asa.firewall.1</name>
+				<type>string</type>
+				<string>Po8,Po9</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.to.asa.firewall.2</name>
+				<type>string</type>
+				<string>Po8,Po9</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.to.l3.services</name>
+				<type>string</type>
+				<string>Po7</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.aggregation.switch.2.to.ucsm</name>
+				<type>string</type>
+				<string>Po5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.29</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string>DES</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.to.l3.aggregation.switch.1</name>
+				<type>string</type>
+				<string>Po7</string>
+			</property>
+			<property isReadOnly="false">
+				<name>l3.services.to.l3.aggregation.switch.2</name>
+				<type>string</type>
+				<string>Po7</string>
+			</property>
+			<property isReadOnly="false">
+				<name>pod.controller.name</name>
+				<type>string</type>
+				<string>od-l1-controller</string>
+			</property>
+			<property isReadOnly="false">
+				<name>pod.controller.pwd</name>
+				<type>string</type>
+				<string>qWhhnE4rg8PGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>pod.device.vlanpool</name>
+				<type>range</type>
+				<range>
+					<start>1100</start>
+					<end>2000</end>
+				</range>
+			</property>
+			<property isReadOnly="false">
+				<name>pod.infrastructure.pool</name>
+				<type>subnets</type>
+				<subnets>
+					<subnet>
+						<ipv4>172.15.16.0</ipv4>
+						<mask>20</mask>
+					</subnet>
+				</subnets>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.28</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>TxoYhoUXRTr3Ays8HvxYVQ==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>TxoYhoUXRTr3Ays8HvxYVQ==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string>DES</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>snmp_admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.1</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.2</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.3</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.4</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.5</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>ucsm.to.virtual.access.switch.6</name>
+				<type>string</type>
+				<string>od-l1/od-l1_vnic0,od-l1/od-l1_vnic1</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.mgmt.addr</name>
+				<type>string</type>
+				<string>192.168.66.12</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.1.to.ucsm</name>
+				<type>string</type>
+				<string>n1kv-uplink0</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.mgmt.addr</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.2.to.ucsm</name>
+				<type>string</type>
+				<string>uplink0</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.mgmt.addr</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.3.to.ucsm</name>
+				<type>string</type>
+				<string>uplink0</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.mgmt.addr</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.4.to.ucsm</name>
+				<type>string</type>
+				<string>uplink0</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.mgmt.addr</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.5.to.ucsm</name>
+				<type>string</type>
+				<string>uplink0</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.mgmt.addr</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.rlogin.enable.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.rlogin.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.rlogin.type</name>
+				<type>string</type>
+				<string>ssh</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.rlogin.user</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v2c.comm.read</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v2c.comm.write</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v3.auth.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v3.auth.proto</name>
+				<type>string</type>
+				<string>MD5</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v3.priv.pass</name>
+				<type>string</type>
+				<string>wYFZaN2B1ZHGYWctBULY7Q==</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v3.priv.proto</name>
+				<type>string</type>
+				<string></string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.v3.sec.name</name>
+				<type>string</type>
+				<string>admin</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.snmp.ver</name>
+				<type>string</type>
+				<string>3</string>
+			</property>
+			<property isReadOnly="false">
+				<name>virtual.access.switch.6.to.ucsm</name>
+				<type>string</type>
+				<string>uplink0</string>
+			</property>
+			<property isReadOnly="true">
+				<name>pod.name</name>
+				<type>string</type>
+				<string>L1 iPOD</string>
+			</property>
+		</properties>
+	</pod>
+</pods>

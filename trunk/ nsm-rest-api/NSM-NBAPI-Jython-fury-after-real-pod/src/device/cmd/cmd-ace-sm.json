@@ -1,0 +1,61 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"session switch 2 slot 2 processor 0",
+	    	"expect": 	"login:"
+	    },
+	    {
+	    	"cmd": 		"admin",
+	    	"expect": 	"Password:"
+	    },
+	    {
+	    	"cmd": 		"cisco123",
+	    	"expect": 	"Admin#"
+	    },
+	    {
+	    	"cmd": 		"checkpoint rollback huan-baseline-config",
+	    	"expect": 	"\\[n\\]"
+	    },
+	    {
+	    	"cmd": 		"y",
+	    	"expect": 	"Config rollback in progress"
+	    },
+	    {
+	    	"cmd": 		"exit",
+	    	"expect": 	"#"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	],
+	
+	"copy": [
+	    {
+	    	"cmd": 		"session switch 2 slot 2 processor 0",
+	    	"expect": 	"login:"
+	    },
+	    {
+	    	"cmd": 		"admin",
+	    	"expect": 	"Password:"
+	    },
+	    {
+	    	"cmd": 		"cisco123",
+	    	"expect": 	"Admin#"
+	    },
+	    {
+	    	"cmd": 		"copy running-config tftp://${tftp-server-host}/",
+	    	"expect": 	"config\\]"
+	    },
+	    {
+	    	"cmd": 		"${host-name}-admin-running-config",
+	    	"expect": 	"TFTP put operation was successful"
+	    },
+	    {
+	    	"cmd": 		"exit",
+	    	"expect": 	"#"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	]
+}

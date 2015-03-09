@@ -1,0 +1,184 @@
+{
+	"reset": [
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"cd /usr/local/overdrive/controller/bin",
+	    	"expect":	"bin\\]#"
+	    },
+	    {
+	    	"cmd": 		"sh reset-config.sh",
+	    	"expect":	"bin\\]#"
+	    }
+	],
+	"start": [
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"/etc/init.d/nsm-controller start",
+	    	"expect":	"\\]#"
+	    }
+	],
+	"configure": [
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"cd /usr/local/overdrive/controller/bin",
+	    	"expect":	"bin]#"
+	    },
+	    {
+	    	"cmd": 		"sh configure",
+	    	"expect":	"vmdc-controller]"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect":	"password]"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"password]"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"Engine hostname or IP address ?"
+	    },
+	    {
+	    	"cmd": 		"od-c3-nsve",
+	    	"expect":	"Syslog host?"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect":	"to quit"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect":	"bin]"
+	    },
+	    {
+	    	"cmd": 		"/etc/init.d/nsm-controller start",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"/etc/init.d/nsm-controller status",
+	    	"expect":	"]#"
+	    }
+	],
+	"save-log": [
+	    {
+	    	"cmd": 		"show tech-support file dsc-tech-support",
+	    	"sleep":	"90",
+	    	"expect":	"admin#"
+	    },
+	    {
+	    	"cmd": 		"config terminal",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"repository my-repository",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"do backup-logs dsc-backup-logs repository my-repository encryption-key plain controller123",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"end",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"shell",
+	    	"expect":	"Enter shell password :"
+	    },
+	    {
+	    	"cmd": 		"Cnh123",
+	    	"expect":	"\\]#"
+	    },
+	    {
+	    	"cmd": 		"cd /root",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"rm -fr log*",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"mkdir log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cd log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /var/log/overdrive_controller.log* .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"ls -lt /localdisk/*",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /localdisk/dsc-tech-support.tar.gz .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cp /localdisk/dsc-backup-logs* .",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"rm -fr /localdisk/dsc-backup-logs*",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"cd ..",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"tar cvf log.dsc.tar log",
+	    	"expect":	"]#"
+	    },
+	    {
+	    	"cmd": 		"gzip log.dsc.tar",
+	    	"expect":	"]#"
+	    }
+	],
+	"set-log-debug": [
+	    {
+	    	"cmd": 		"config terminal",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"logging loglevel 7",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"end",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"wr mem",
+	    	"expect":	"#"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	]
+}

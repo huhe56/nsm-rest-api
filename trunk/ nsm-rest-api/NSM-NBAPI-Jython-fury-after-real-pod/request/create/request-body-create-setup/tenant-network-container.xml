@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Tenant Network Container</name>
+	<description>This is the description of My Default Tenant Network Container</description>
+	<parameters>
+		<parameter>
+			<name>tnc.pod</name>
+			<type>uid</type>
+			<uid>${tnc.pod.uid}</uid>
+		</parameter>
+	</parameters>
+</serviceOffering>

@@ -1,0 +1,60 @@
+{
+    "LoadBalancerService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "non-default-load-balancer-service-http-https.xml",
+	    	"name": "My Non Default Secured Internet Load Balancer Service",
+	    	"description": "This is the description of my non default secured internet load balancer service",
+	    	
+	    	"lb.service.1.protocol": "tcp",
+        	"lb.service.1.port.start": "80",
+        	"serverfarm.probe.1": "http",
+        	
+        	"lb.service.2.protocol": "tcp",
+        	"lb.service.2.port.start": "443",
+        	"serverfarm.probe.2": "https",
+        	
+        	"lb.algorithm": "roundrobin",
+        	
+        	"real.servers.1.ipv4.start": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"real.servers.2.ipv4.start": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"real.servers.3.ipv4.start": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"vip.address.1.ipv4.start": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "real.servers.trafficFilter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Secured Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "vip.address.trafficFilter.uid",
+		    	    "class": "SecuredInternetEdgeZone",
+		    	    "name": "My Default Secured Internet Edge Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}    	
+    ]
+}

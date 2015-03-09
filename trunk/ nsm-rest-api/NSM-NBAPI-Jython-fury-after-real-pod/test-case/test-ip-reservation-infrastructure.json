@@ -1,0 +1,69 @@
+{
+    "IpReservation":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-ip-reservation-range.xml",
+	    	"name": "My Default IP Address of Infrastructure Reservation Range",
+	    	"description": "This is the description of My Default IP Address of Infrastructure Reservation Range",
+	    	
+	    	"owner": "NMTG",
+	    	"ipv4AddressRange.1.ipv4.start": "129.0.0.100",
+        	"ipv4AddressRange.1.ipv4.end": "129.0.0.110"
+    	},
+    	
+    	{     
+    		"id": "101",
+    		"action": "detail",
+	    	"category": "positive"
+    	},
+    	
+    	{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"request.body.file": "default-update-ip-reservation-range.xml",
+	    	"name": "My Default Update IP Address of Infrastructure Reservation Range",
+	    	"description": "This is the description of My Default Update IP Address of Global Infrastructure Range",
+	    	"owner": "Update Owner",
+	    	"ipv4Start": "129.0.0.111",
+	    	"ipv4End": "129.0.0.120"
+    	},
+    	
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+    	{     
+    		"id": "501",
+    		"action": "delete",
+	    	"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-ip-reservation-range.xml",
+	    	"name": "My Default IP Address of Infrastructure Reservation Range",
+	    	"description": "This is the description of My Default IP Address of Infrastructure Reservation Range",
+	    	
+	    	"owner": "NMTG",
+	    	"ipv4AddressRange.1.ipv4.start": "129.0.0.100",
+        	"ipv4AddressRange.1.ipv4.end": "129.0.0.110"
+    	},
+    	
+    	{     
+    		"id": "111",
+    		"action": "detail",
+	    	"category": "positive"
+    	}
+    	
+    ]
+}

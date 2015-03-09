@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Private External Network</name>
+	<description>This is the description of My Setup Private External Network</description>
+	<parameters>
+		<parameter>
+			<name>external.subnets</name>
+			<type>subnets</type>
+			<subnets>
+				<subnet>
+					<ipv4>10.68.0.0</ipv4>
+					<mask>18</mask>
+				</subnet>
+			</subnets>
+		</parameter>
+	</parameters>
+</serviceOffering>

@@ -1,0 +1,52 @@
+{
+    "StaticNatService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-static-nat-service.xml",
+	    	"name": "My Default Internet Static NAT Service",
+	    	"description": "This is the description of my default internet static nat service",
+        
+	    	"traffic.dst.1.ipv4.start": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+	    	"traffic.dst.1.ipv4.end": "SecuredInternetEdgeZoneLayer3VlanReservedIpAddress",
+	    	
+        	"mapped.address.1.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"mapped.address.1.ipv4.end": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Secured Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	
+		    	{
+		    	    "variable": "mapped.address.uid",
+		    	    "class": "InternetEdgeZone",
+		    	    "name": "My Default Internet Edge Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+    ]
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Secured Internet Edge Zone Layer3 VLAN</name>
+	<description>This is the description of My Default Secured Internet Edge Zone Layer3 VLAN</description>
+	<parameters>
+		<parameter>
+			<name>l3.vlan.netmask</name>
+			<type>integer</type>
+			<integer>28</integer>
+		</parameter>
+	</parameters>
+</serviceOffering>

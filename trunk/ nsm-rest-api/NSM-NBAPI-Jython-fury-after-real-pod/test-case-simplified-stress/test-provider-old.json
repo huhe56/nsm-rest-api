@@ -1,0 +1,33 @@
+{
+    "Provider":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-provider.xml",
+	    	"name": "My Default Provider",
+	    	"description": "This is the description of my default provider",
+	    	
+	    	"global.pool.subnet.1.ipv4": "179.0.0.0",
+			"global.pool.subnet.1.mask": "20",
+			
+	    	"infrastructure.pool.subnet.1.ipv4": "129.0.0.0",
+			"infrastructure.pool.subnet.1.mask": "20"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

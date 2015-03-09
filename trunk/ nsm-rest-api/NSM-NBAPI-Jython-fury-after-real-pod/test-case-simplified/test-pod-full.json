@@ -1,0 +1,23 @@
+{
+    "PodFull":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-pod-full.xml",
+	    	"name": "My Default Pod",
+	    	"description": "This is the description of my default pod full",
+	    	
+	    	"infrastructure.pool.subnet.1.ipv4": "129.0.0.0",
+			"infrastructure.pool.subnet.1.mask": "20"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

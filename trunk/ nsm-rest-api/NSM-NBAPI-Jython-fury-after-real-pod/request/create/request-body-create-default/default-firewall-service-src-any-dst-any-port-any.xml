@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>${name}</name>
+	<description>${description}</description>
+	<parameters>
+		<parameter>
+			<name>traffic.src</name>
+			<type>trafficFilters</type>
+			<trafficFilters>
+				<trafficFilter>
+					<uid>${traffic.src.filter.1.uid}</uid>
+				</trafficFilter>
+			</trafficFilters>
+		</parameter>
+		<parameter>
+			<name>traffic.dst</name>
+			<type>trafficFilters</type>
+			<trafficFilters>
+				<trafficFilter>
+					<uid>${traffic.dst.filter.1.uid}</uid>
+				</trafficFilter>
+			</trafficFilters>
+		</parameter>
+		<parameter>
+			<name>fw.service.ports</name>
+			<type>protocolServices</type>
+			<protocolServices>
+				<protocolService>
+					<protocol>${fw.service.1.protocol}</protocol>
+				</protocolService>
+			</protocolServices>
+		</parameter>
+	</parameters>
+</serviceOffering>

@@ -1,0 +1,40 @@
+{
+    "FirewallService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-firewall-service-1.xml",
+	    	"name": "My Default Internet Firewall Service 1 Between South Zone and External Network",
+	    	"description": "This is the description of my default internet firewall service 1 between south zone and external network",
+	    	
+	    	"fw.service.1.protocol": "any",
+        	"src.ipv4.1.start": "89.48.0.100",
+        	"src.ipv4.1.end": "89.48.0.111",
+        	"dst.ipv4.1.start": "187.23.0.5",
+        	"dst.ipv4.1.end": "187.23.0.5",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "Layer3ExplicitSubnet",
+		    	    "name": "My Default South Zone Layer 3 Explicit Subnet"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

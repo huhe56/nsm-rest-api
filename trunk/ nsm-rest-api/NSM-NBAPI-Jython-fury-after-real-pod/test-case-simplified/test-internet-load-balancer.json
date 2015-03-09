@@ -1,0 +1,56 @@
+{
+    "LoadBalancerService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-load-balancer-service.xml",
+	    	"name": "My Default Internet Load Balancer Service",
+	    	"description": "This is the description of my default internet load balancer service",
+	    	
+	    	"lb.service.1.protocol": "tcp",
+        	"lb.service.1.port.start": "80",
+        	"lb.service.1.port.end": "80",
+        	"lb.algorithm": "roundrobin",
+        	"serverfarm.probe.1": "icmp",
+        	
+        	"real.servers.1.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"real.servers.2.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"real.servers.3.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	"vip.address.1.ipv4.start": "InternetEdgeZoneLayer3VlanReservedIpAddress",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Internet External Network"
+		    	},
+		    	{
+		    	    "variable": "real.servers.trafficFilter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "vip.address.trafficFilter.uid",
+		    	    "class": "InternetEdgeZone",
+		    	    "name": "My Default Internet Edge Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+    ]
+}

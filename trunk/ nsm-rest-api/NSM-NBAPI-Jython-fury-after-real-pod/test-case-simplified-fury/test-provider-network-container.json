@@ -1,0 +1,30 @@
+{
+    "ProviderNetworkContainer":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-provider-network-container.xml",
+	    	"name": "My Default Provider Network Container",
+	    	"description": "This is the description of my default provider network container",
+	    	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "pod.uid",
+		    	    "class": "Pod",
+		    	    "name": "My Default Pod"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+		
+    ]
+}

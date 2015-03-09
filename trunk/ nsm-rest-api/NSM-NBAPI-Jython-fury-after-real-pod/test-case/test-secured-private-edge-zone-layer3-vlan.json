@@ -1,0 +1,70 @@
+{
+    "Layer3PrivateAccessVlan":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-layer3-private-access-vlan.xml",
+	    	"name": "My Default Secured Private Edge Zone Layer 3 VLAN",
+	    	"description": "This is the description of my default secured private edge zone layer 3 vlan",
+	    	"l3.vlan.netmask": "27"
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties.csv" 
+    	},
+		
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+    	{
+    	    "id": "501",
+    	    "action": "delete",
+			"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-layer3-private-access-vlan.xml",
+	    	"name": "My Default Secured Private Edge Zone Layer 3 VLAN",
+	    	"description": "This is the description of my default secured private edge zone layer 3 vlan",
+	    	"l3.vlan.netmask": "27"
+    	},
+    	
+    	{
+		    "id": "111",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "211",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

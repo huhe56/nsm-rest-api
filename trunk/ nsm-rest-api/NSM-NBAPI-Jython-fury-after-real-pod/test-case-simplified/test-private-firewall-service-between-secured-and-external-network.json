@@ -1,0 +1,45 @@
+{
+    "FirewallService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-firewall-service.xml",
+	    	"name": "My Default Private Firewall Service Between Secured and External Network",
+	    	"description": "This is the description of my default private firewall service between secured and external network",
+	    	
+	    	"fw.service.1.protocol": "tcp",
+        	"fw.service.1.port.start": "80",
+        	"fw.service.1.port.end": "80",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Private External Network"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "Layer3PrivateAccessVlan",
+		    	    "name": "My Default Secured Private Edge Zone Layer 3 VLAN"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

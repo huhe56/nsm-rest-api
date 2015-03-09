@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceOffering xmlns="http://www.cisco.com/NetworkServicesManager/1.1"
+	xmlns:ns2="http://www.w3.org/2005/Atom">
+	<uid>${uid}</uid>
+	<name>My Setup Firewall Service of Secured and Unsecured Zone</name>
+	<description>This is the description of My Setup Firewall Service of Secured and Unsecured Zone</description>
+	<parameters>
+		<parameter>
+			<name>traffic.src</name>
+			<type>trafficFilters</type>
+			<trafficFilters>
+				<trafficFilter>
+					<uid>${traffic.src.filter.uid}</uid>
+				</trafficFilter>
+			</trafficFilters>
+		</parameter>
+		<parameter>
+			<name>traffic.dst</name>
+			<type>trafficFilters</type>
+			<trafficFilters>
+				<trafficFilter>
+					<uid>${traffic.dst.filter.uid}</uid>
+				</trafficFilter>
+			</trafficFilters>
+		</parameter>
+		<parameter>
+			<name>fw.service.ports</name>
+			<type>protocolServices</type>
+			<protocolServices>
+				<protocolService>
+					<protocol>tcp</protocol>
+					<portRange>
+						<start>80</start>
+						<end>80</end>
+					</portRange>
+				</protocolService>
+			</protocolServices>
+		</parameter>
+	</parameters>
+</serviceOffering>

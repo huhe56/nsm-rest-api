@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Top>
+	<Provider>
+		<Pod></Pod>
+		<Tenant>
+			<ExternalNetwork></ExternalNetwork>
+			<TenantNetworkContainer>
+				<InternetEdgeZone>
+					<Layer3ExternalAccessVlan
+						request.body.file="internet-edge-zone-layer3-vlan.xml" />
+				</InternetEdgeZone>
+				<SecuredInternetEdgeZone>
+					<Layer3ExternalAccessVlan
+						request.body.file="secured-internet-edge-zone-layer3-vlan.xml" />
+				</SecuredInternetEdgeZone>
+				<ExternalConnection>
+					<uids>
+						<uid name="external.networks.1,uid" value="My Default External Network" />
+						<uid name="assigned.zone.uid" value="My Default Internet Edge Zone" />
+					</uids>
+				</ExternalConnection>
+			</TenantNetworkContainer>
+			<FirewallService reqeust.body.file="firewall-service-secured-and-unsecured.xml">
+				<uids>
+					<uid name="traffic.src.filter.uid" value="My Secured Default Internet Edge Zone Layer 3 VLAN" />
+					<uid name="traffic.dst.filter.uid" value="My Default Internet Edge Zone Layer 3 VLAN" />
+				</uids>
+			</FirewallService>
+			<FirewallService request.body.file="firewall-service-secured-and-external-network.xml">
+				<uids>
+					<uid name="traffic.src.filter.uid" value="My Default External Network" />
+					<uid name="traffic.dst.filter.uid" value="My Secured Default Internet Edge Zone Layer 3 VLAN" />
+				</uids>
+			</FirewallService>
+		</Tenant>
+	</Provider>
+</Top>

@@ -1,0 +1,104 @@
+{
+    "FirewallService":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-firewall-service.xml",
+	    	"name": "My Default Internet Firewall Service Between Secured and Unsecured Zone",
+	    	"description": "This is the description of my default internet firewall service between secured and unsecured zone",
+	    	
+	    	"fw.service.1.protocol": "tcp",
+        	"fw.service.1.port.start": "80",
+        	"fw.service.1.port.end": "80",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Secured Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Internet Edge Zone Layer 3 VLAN"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "201",
+		    "action": "catalog",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"test.case.file": "update-all-meta-properties.csv" 
+    	},
+		
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+    	{
+    	    "id": "501",
+    	    "action": "delete",
+			"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-firewall-service.xml",
+	    	"name": "My Default Internet Firewall Service Between Secured and Unsecured Zone",
+	    	"description": "This is the description of my default internet firewall service between secured and unsecured zone",
+	    	
+	    	"fw.service.1.protocol": "tcp",
+        	"fw.service.1.port.start": "80",
+        	"fw.service.1.port.end": "80",
+        	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "traffic.src.filter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Secured Internet Edge Zone Layer 3 VLAN"
+		    	},
+		    	{
+		    	    "variable": "traffic.dst.filter.1.uid",
+		    	    "class": "Layer3ExternalAccessVlan",
+		    	    "name": "My Default Internet Edge Zone Layer 3 VLAN"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "111",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+		    "id": "211",
+		    "action": "catalog",
+	    	"category": "positive"
+		}
+		
+    ]
+}

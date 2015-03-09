@@ -1,0 +1,40 @@
+{
+    "PrivateMplsConnection":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-private-mpls-connection.xml",
+	    	"name": "My Default Private MPLS Connection",
+	    	"description": "This is the description of my default private mpls connection",
+	    	
+	        "mpls.export.routes.routeTarget.1.ipv4": "10.50.0.0",
+	        "mpls.export.routes.routeTarget.1.ASNumber": "6500",
+	        "mpls.import.routes.routeTarget.1.ipv4": "10.40.0.0",
+	        "mpls.import.routes.routeTarget.1.ASNumber": "6500",
+	    	
+	    	"uids": 
+	    	[
+		    	{
+		    	    "variable": "external.networks.1.uid",
+		    	    "class": "ExternalNetwork",
+		    	    "name": "My Default Private External Network"
+		    	},
+		    	{
+		    	    "variable": "assigned.zone.uid",
+		    	    "class": "PrivateEdgeZone",
+		    	    "name": "My Default Private Edge Zone"
+		    	}
+	    	]
+    	},
+
+		{
+		    "id": "101",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+		
+    ]
+}

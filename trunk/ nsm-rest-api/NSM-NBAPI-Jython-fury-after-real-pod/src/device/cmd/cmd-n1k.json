@@ -1,0 +1,30 @@
+{	
+	"copy": [
+	    {
+	    	"cmd": 		"copy running-config tftp://${tftp-server-host}/tftpboot/",
+	    	"expect": 	"config\\]"
+	    },
+	    {
+	    	"cmd": 		"",
+	    	"expect": 	"considered"
+	    },
+	    {
+	    	"cmd": 		"management",
+	    	"expect": 	"TFTP put operation was successful"
+	    },
+	    {
+	    	"cmd": 		"exit"
+	    }
+	],
+	
+	"reset": [
+	    {
+	    	"cmd": 		"terminal length 0",
+	    	"expect":	"#"	
+	    },
+	    {
+	    	"cmd": 		"show running-config",
+	    	"expect": 	"n1kv#"
+	    }
+	]
+}

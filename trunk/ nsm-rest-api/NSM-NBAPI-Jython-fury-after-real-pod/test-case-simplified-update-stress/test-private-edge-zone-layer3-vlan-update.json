@@ -1,0 +1,24 @@
+{
+    "Layer3PrivateAccessVlan":      
+     [
+    	{
+		    "id": "111",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+		
+		{
+	    	"id": "401",
+	    	"action": "update",
+	    	"category": "positive",
+	    	"name": "My updated private edge zone layer vlan",
+	    	"description": "My updated private edge zone layer vlan description"
+    	},
+    	
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		}
+    ]
+}

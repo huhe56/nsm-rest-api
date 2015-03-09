@@ -1,0 +1,55 @@
+{
+    "IpReservation":      
+     [
+    	{     
+    		"id": "001",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-ip-reservation-count.xml",
+	    	"name": "My Default IP Address of Global Reservation Count",
+	    	"description": "This is the description of My Default IP Address of Global Reservation Count",
+	    	
+	    	"owner": "NMTG",
+	    	"count": "4"
+    	},
+    	
+    	{     
+    		"id": "101",
+    		"action": "detail",
+	    	"category": "positive"
+    	},
+    	
+    	{
+		    "id": "121",
+		    "action": "detail",
+	    	"category": "positive"
+		},
+    	
+    	{     
+    		"id": "501",
+    		"action": "delete",
+	    	"category": "positive"
+    	},
+    	
+    	{     
+    		"id": "011",
+    		"action": "create",
+	    	"category": "positive",
+	    	
+	    	"request.body.file": "default-ip-reservation-count.xml",
+	    	"name": "My Default IP Address of Global Reservation Count",
+	    	"description": "This is the description of My Default IP Address of Global Reservation Count",
+	    	
+	    	"owner": "NMTG",
+	    	"count": "4"
+    	},
+    	
+    	{     
+    		"id": "111",
+    		"action": "detail",
+	    	"category": "positive"
+    	}
+    	
+    ]
+}
